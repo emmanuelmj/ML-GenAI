@@ -69,3 +69,6 @@ usa_model = LinearRegression()
 usa_model.fit(X_train,y_train)
 
 pd.DataFrame(usa_model.coef_,index=X.columns)
+usa_model.intercept_
+pred_usa=usa_model.predict(X_test)
+r2_score(y_test,pred_usa)
