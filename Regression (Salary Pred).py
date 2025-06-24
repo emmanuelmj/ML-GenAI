@@ -12,25 +12,11 @@ import pandas as pd
 import seaborn as sb
 import matplotlib.pyplot as pt
 import cv2 #computer vision
-
-from google.colab import drive
-drive.mount('/content/drive')
-
-data = cv2.imread(r"/content/drive/My Drive/Colab Notebooks/IITH-Bootcamp/kk.jpg")
-
-type(data)
-
-type(data)
-data.shape
-pt.imshow(data)
-pt.show()
-
-cdata = data[:400,:]
+from sklearn.model_selection import train_test_split
 
 saldata = pd.read_csv("https://raw.githubusercontent.com/pramodini18/Salary-prediction/refs/heads/master/Salary_Data.csv")
 pt.plot(saldata.YearsExperience,saldata.Salary)
 
-from sklearn.model_selection import train_test_split
 
 X=saldata[['YearsExperience']]
 y=saldata['Salary']
